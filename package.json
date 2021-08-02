@@ -1,0 +1,14 @@
+{
+  "name": "arubyray",
+  "version": "0.1.0",
+  "description": "array utilities provided in Ruby",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "array"
+  ],
+  "author": "autopp",
+  "license": "Apache-2.0"
+}
