@@ -1,4 +1,4 @@
-import * as arubyray from "../src"
+import * as arubyray from '../src'
 
 describe('clear()', () => {
   it('clears the given array and returns it', () => {

@@ -31,7 +31,7 @@ export default {
   // ],
 
   // Indicates which provider should be used to instrument code for coverage
-  coverageProvider: "v8",
+  coverageProvider: 'v8',
 
   // A list of reporter names that Jest uses when writing coverage reports
   // coverageReporters: [
@@ -137,7 +137,7 @@ export default {
   // snapshotSerializers: [],
 
   // The test environment that will be used for testing
-  testEnvironment: "node",
+  testEnvironment: 'node',
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
@@ -146,9 +146,7 @@ export default {
   // testLocationInResults: false,
 
   // The glob patterns Jest uses to detect test files
-  testMatch: [
-    "**/test/**/*.(spec|test).[jt]s?(x)",
-  ],
+  testMatch: ['**/test/**/*.(spec|test).[jt]s?(x)'],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   // testPathIgnorePatterns: [
@@ -172,7 +170,7 @@ export default {
 
   // A map from regular expressions to paths to transformers
   transform: {
-    "^.+\\.ts$": "ts-jest"
+    '^.+\\.ts$': 'ts-jest',
   },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
@@ -192,4 +190,4 @@ export default {
 
   // Whether to use watchman for file crawling
   // watchman: true,
-};
+}
