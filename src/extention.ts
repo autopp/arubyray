@@ -6,6 +6,6 @@ declare global {
   }
 }
 
-Array.prototype.clear = function <T>() {
+Array.prototype.clear = function <T>(): T[] {
   return Arubyray.clear(this as T[])
 }
