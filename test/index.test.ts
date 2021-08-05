@@ -1,3 +1,4 @@
+import 'jest-extended'
 import * as Arubyray from '../src'
 
 describe('clear()', () => {
@@ -21,5 +22,11 @@ describe('assoc()', () => {
     ['when matching tuple is not found, returns undefined', 4, undefined],
   ])('%s', (_, key, expected) => {
     expect(Arubyray.assoc(array, key)).toEqual(expected)
+  })
+})
+
+describe('compact()', () => {
+  it('returns array excludes null and undefined', () => {
+    expect(Arubyray.compact([1, undefined, 2, null])).toEqual([1, 2])
   })
 })

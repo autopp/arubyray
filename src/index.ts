@@ -6,3 +6,14 @@ export function clear<T>(array: Array<T>): Array<T> {
 export function assoc<K, R extends unknown[]>(array: [K, ...R][], key: K): [K, ...R] | undefined {
   return array.find(([k]) => k === key)
 }
+
+export function compact<T>(array: readonly T[]): T[] {
+  const result: T[] = []
+  for (const x of array) {
+    if (x !== null && x !== undefined) {
+      result.push(x)
+    }
+  }
+
+  return result
+}
