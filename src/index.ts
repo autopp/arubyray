@@ -18,6 +18,22 @@ export function compact<T>(array: readonly T[]): T[] {
   return result
 }
 
+export function combination<T>(array: readonly T[], n: number): T[][] {
+  if (array.length < n || n < 0) {
+    return []
+  }
+
+  if (n === 0) {
+    return [[]]
+  }
+
+  const [head, ...rest] = array
+  const appended = combination(rest, n - 1).map((sub) => [head, ...sub])
+
+  appended.push(...combination(rest, n))
+  return appended
+}
+
 export function count<T>(array: readonly T[], callackfn: (x: T) => boolean): number {
   let satisfied = 0
   for (const x of array) {
