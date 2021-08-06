@@ -17,3 +17,14 @@ export function compact<T>(array: readonly T[]): T[] {
 
   return result
 }
+
+export function count<T>(array: readonly T[], callackfn: (x: T) => boolean): number {
+  let satisfied = 0
+  for (const x of array) {
+    if (callackfn(x)) {
+      satisfied++
+    }
+  }
+
+  return satisfied
+}

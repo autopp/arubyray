@@ -30,3 +30,9 @@ describe('compact()', () => {
     expect(Arubyray.compact([1, undefined, 2, null])).toEqual([1, 2])
   })
 })
+
+describe('count()', () => {
+  it('returns count of satisfied callback', () => {
+    expect(Arubyray.count([0, 1, 2, 3, 4], (x) => x % 2 === 0)).toEqual(3)
+  })
+})
