@@ -48,3 +48,14 @@ export function count<T>(array: readonly T[], callackfn: (x: T) => boolean): num
 export function drop<T>(array: readonly T[], n: number): T[] {
   return array.slice(n)
 }
+
+export function dropWhile<T>(array: readonly T[], callbackfn: (x: T) => boolean): T[] {
+  let i: number
+  for (i = 0; i < array.length; i++) {
+    if (!callbackfn(array[i])) {
+      break
+    }
+  }
+
+  return array.slice(i)
+}

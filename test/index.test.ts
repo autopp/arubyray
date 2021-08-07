@@ -64,3 +64,9 @@ describe('drop()', () => {
     expect(Arubyray.drop([1, 2, 3, 4, 5], 3)).toEqual([4, 5])
   })
 })
+
+describe('dropWhile()', () => {
+  it('returns array dropped while callback is satisfied', () => {
+    expect(Arubyray.dropWhile([1, 2, 3, 1, 2, 3], (x) => x < 3)).toEqual([3, 1, 2, 3])
+  })
+})
