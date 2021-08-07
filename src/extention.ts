@@ -6,6 +6,7 @@ declare global {
     compact(): T[]
     combination(n: number): T[][]
     count(callbackfn: (x: T) => boolean): number
+    drop(n: number): T[]
   }
 }
 
@@ -23,4 +24,8 @@ Array.prototype.combination = function <T>(n: number): T[][] {
 
 Array.prototype.count = function <T>(callbackfn: (x: T) => boolean): number {
   return Arubyray.count(this as T[], callbackfn)
+}
+
+Array.prototype.drop = function <T>(n: number): T[] {
+  return Arubyray.drop(this as T[], n)
 }

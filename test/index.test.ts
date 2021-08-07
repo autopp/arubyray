@@ -58,3 +58,9 @@ describe('count()', () => {
     expect(Arubyray.count([0, 1, 2, 3, 4], (x) => x % 2 === 0)).toEqual(3)
   })
 })
+
+describe('drop()', () => {
+  it('returns array dropped first n items', () => {
+    expect(Arubyray.drop([1, 2, 3, 4, 5], 3)).toEqual([4, 5])
+  })
+})

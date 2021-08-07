@@ -44,3 +44,7 @@ export function count<T>(array: readonly T[], callackfn: (x: T) => boolean): num
 
   return satisfied
 }
+
+export function drop<T>(array: readonly T[], n: number): T[] {
+  return array.slice(n)
+}
