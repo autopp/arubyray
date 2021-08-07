@@ -59,3 +59,28 @@ export function dropWhile<T>(array: readonly T[], callbackfn: (x: T) => boolean)
 
   return array.slice(i)
 }
+
+export function permutation<T>(array: readonly T[], n: number): T[][] {
+  if (n > array.length) {
+    return []
+  }
+
+  const result = new Array<T[]>()
+
+  const buildPermutation = (buf: number[]) => {
+    if (buf.length === n) {
+      result.push(buf.map((i) => array[i]))
+      return
+    }
+
+    for (let i = 0; i < array.length; i++) {
+      if (!buf.includes(i)) {
+        buildPermutation(buf.concat(i))
+      }
+    }
+  }
+
+  buildPermutation([])
+
+  return result
+}

@@ -7,7 +7,8 @@ declare global {
     combination(n: number): T[][]
     count(callbackfn: (x: T) => boolean): number
     drop(n: number): T[]
-    dropWhile<T>(callbackfn: (x: T) => boolean): T[]
+    dropWhile(callbackfn: (x: T) => boolean): T[]
+    permutation(n: number): T[][]
   }
 }
 
@@ -33,4 +34,8 @@ Array.prototype.drop = function <T>(n: number): T[] {
 
 Array.prototype.dropWhile = function <T>(callbackfn: (x: T) => boolean): T[] {
   return Arubyray.dropWhile(this as T[], callbackfn)
+}
+
+Array.prototype.permutation = function <T>(n: number): T[][] {
+  return Arubyray.permutation(this as T[], n)
 }

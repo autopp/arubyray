@@ -70,3 +70,38 @@ describe('dropWhile()', () => {
     expect(Arubyray.dropWhile([1, 2, 3, 1, 2, 3], (x) => x < 3)).toEqual([3, 1, 2, 3])
   })
 })
+
+describe('permutation()', () => {
+  const array = [1, 2, 3]
+  it.each([
+    [0, [[]]],
+    [1, [[1], [2], [3]]],
+    [
+      2,
+      [
+        [1, 2],
+        [1, 3],
+        [2, 1],
+        [2, 3],
+        [3, 1],
+        [3, 2],
+      ],
+    ],
+    [
+      3,
+      [
+        [1, 2, 3],
+        [1, 3, 2],
+        [2, 1, 3],
+        [2, 3, 1],
+        [3, 1, 2],
+        [3, 2, 1],
+      ],
+    ],
+    [4, []],
+  ])('with [1, 2, 3] and %d, returns %j', (n, expected) => {
+    const actual = Arubyray.permutation(array, n)
+    expect(actual).toIncludeAllMembers(expected)
+    expect(actual.length).toEqual(expected.length)
+  })
+})
