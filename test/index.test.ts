@@ -105,3 +105,37 @@ describe('permutation()', () => {
     expect(actual.length).toEqual(expected.length)
   })
 })
+
+describe('product()', () => {
+  it('with [1, 2], returns [[1], [2]]', () => {
+    expect(Arubyray.product([1, 2])).toEqual([[1], [2]])
+  })
+
+  it('with [1, 2] and ["a", "b", "c"], returns [[1, "a"], [1, "b"], [1, "c"], [2, "a"], [2, "b"], [2, "c"]]', () => {
+    expect(Arubyray.product([1, 2], ['a', 'b', 'c'])).toEqual([
+      [1, 'a'],
+      [1, 'b'],
+      [1, 'c'],
+      [2, 'a'],
+      [2, 'b'],
+      [2, 'c'],
+    ])
+  })
+
+  it('with [1, 2], ["a", "b"] and [true, false], returns [[1, "a", true], [1, "a", false], [1, "b", true], [1, "b", false], [2, "a", true], [2, "a", false], [2, "b", true], [2, "b", false]]', () => {
+    expect(Arubyray.product([1, 2], ['a', 'b'], [true, false])).toEqual([
+      [1, 'a', true],
+      [1, 'a', false],
+      [1, 'b', true],
+      [1, 'b', false],
+      [2, 'a', true],
+      [2, 'a', false],
+      [2, 'b', true],
+      [2, 'b', false],
+    ])
+  })
+
+  it('with [1, 2], [] and ["a", "b"], returns []', () => {
+    expect(Arubyray.product([1, 2], [], ['a', 'b'])).toEqual([])
+  })
+})

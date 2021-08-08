@@ -84,3 +84,44 @@ export function permutation<T>(array: readonly T[], n: number): T[][] {
 
   return result
 }
+
+type TupleToTupleOfArray<T extends readonly unknown[]> = {
+  [I in keyof T]: T[I][]
+}
+
+export function product<T>(array: readonly T[]): T[][]
+export function product<T, U, W extends unknown[]>(
+  array: readonly T[],
+  other: U[],
+  ...list: TupleToTupleOfArray<W>
+): [T, U, ...W][]
+
+export function product<T, U, W extends readonly unknown[]>(
+  array: readonly T[],
+  other?: readonly U[],
+  ...list: TupleToTupleOfArray<W>
+): T[][] | [T, U, ...W][] {
+  const doProduct = <T, U, W extends readonly unknown[]>(
+    array: readonly T[],
+    other: readonly U[] | undefined,
+    list: TupleToTupleOfArray<W>
+  ): T[][] | [T, U, ...W][] => {
+    if (other === undefined) {
+      return array.map((x) => [x])
+    }
+
+    const [head, ...rest] = list
+    const sub = doProduct(other, head, rest) as unknown as [U, ...W][]
+
+    const result: [T, U, ...W][] = []
+    array.forEach((x) => {
+      sub.forEach((y) => {
+        result.push([x, ...y])
+      })
+    })
+
+    return result
+  }
+
+  return doProduct(array, other, list)
+}
