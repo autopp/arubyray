@@ -123,3 +123,21 @@ export function product<T, U, W extends readonly unknown[]>(
 
   return doProduct(array, other, list)
 }
+
+export function repeatedCombination<T>(array: readonly T[], n: number): T[][] {
+  if (n < 0) {
+    return []
+  }
+
+  if (n === 0) {
+    return [[]]
+  }
+
+  const result: T[][] = []
+  for (let i = 0; i < array.length; i++) {
+    const head = array[i]
+    result.push(...repeatedCombination(array.slice(i), n - 1).map((sub) => [head, ...sub]))
+  }
+
+  return result
+}

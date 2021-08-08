@@ -139,3 +139,66 @@ describe('product()', () => {
     expect(Arubyray.product([1, 2], [], ['a', 'b'])).toEqual([])
   })
 })
+
+describe('repeatedCombination()', () => {
+  const array = [1, 2, 3]
+  it.each([
+    [0, [[]]],
+    [1, [[1], [2], [3]]],
+    [
+      2,
+      [
+        [1, 1],
+        [1, 2],
+        [1, 3],
+        [2, 2],
+        [2, 3],
+        [3, 3],
+      ],
+    ],
+    [
+      3,
+      [
+        [1, 1, 1],
+        [1, 1, 2],
+        [1, 1, 3],
+        [1, 2, 2],
+        [1, 2, 3],
+        [1, 3, 3],
+        [2, 2, 2],
+        [2, 2, 3],
+        [2, 3, 3],
+        [3, 3, 3],
+      ],
+    ],
+    [
+      4,
+      [
+        [
+          [1, 1, 1, 1],
+          [1, 1, 1, 2],
+          [1, 1, 1, 3],
+          [1, 1, 2, 2],
+          [1, 1, 2, 3],
+          [1, 1, 3, 3],
+          [1, 2, 2, 2],
+          [1, 2, 2, 3],
+          [1, 2, 3, 3],
+          [1, 3, 3, 3],
+          [2, 2, 2, 2],
+          [2, 2, 2, 3],
+          [2, 2, 3, 3],
+          [2, 3, 3, 3],
+          [3, 3, 3, 3],
+        ],
+      ],
+    ],
+  ])('with [1, 2, 3] and %d, returns %j', (n, expected) => {
+    if (n !== 2) {
+      return
+    }
+    const actual = Arubyray.repeatedCombination(array, n)
+    expect(actual).toIncludeAllMembers(expected)
+    expect(actual.length).toEqual(expected.length)
+  })
+})

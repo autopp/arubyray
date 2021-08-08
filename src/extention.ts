@@ -14,6 +14,7 @@ declare global {
       other?: readonly U[],
       ...list: TupleToTupleOfArray<W>
     ): T[][] | [T, U, ...W][]
+    repeatedCombination(n: number): T[][]
   }
 }
 
@@ -54,4 +55,8 @@ Array.prototype.product = function <T, U, W extends readonly unknown[]>(
   }
 
   return Arubyray.product<T, U, W>(this as T[], other, ...list)
+}
+
+Array.prototype.repeatedCombination = function <T>(n: number): T[][] {
+  return Arubyray.repeatedCombination(this as T[], n)
 }
