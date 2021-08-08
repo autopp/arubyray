@@ -141,3 +141,20 @@ export function repeatedCombination<T>(array: readonly T[], n: number): T[][] {
 
   return result
 }
+
+export function repeatedPermutation<T>(array: readonly T[], n: number): T[][] {
+  if (n < 0) {
+    return []
+  }
+
+  if (n === 0) {
+    return [[]]
+  }
+
+  const result: T[][] = []
+  for (let i = 0; i < array.length; i++) {
+    result.push(...repeatedPermutation(array, n - 1).map((sub) => [array[i], ...sub]))
+  }
+
+  return result
+}
