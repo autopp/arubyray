@@ -166,3 +166,14 @@ export function take<T>(array: readonly T[], n: number): T[] {
 
   return array.slice(0, n)
 }
+
+export function takeWhile<T>(array: readonly T[], callbackfn: (x: T) => boolean): T[] {
+  let i: number
+  for (i = 0; i < array.length; i++) {
+    if (!callbackfn(array[i])) {
+      break
+    }
+  }
+
+  return array.slice(0, i)
+}

@@ -17,6 +17,7 @@ declare global {
     repeatedCombination(n: number): T[][]
     repeatedPermutation(n: number): T[][]
     take(n: number): T[]
+    takeWhile(callbackfn: (x: T) => boolean): T[]
   }
 }
 
@@ -70,4 +71,8 @@ Array.prototype.repeatedPermutation = function <T>(this: T[], n: number): T[][] 
 
 Array.prototype.take = function <T>(this: T[], n: number): T[] {
   return Arubyray.take(this, n)
+}
+
+Array.prototype.takeWhile = function <T>(this: T[], callbackfn: (x: T) => boolean): T[] {
+  return Arubyray.takeWhile(this, callbackfn)
 }

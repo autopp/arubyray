@@ -286,3 +286,9 @@ describe('take()', () => {
     expect(Arubyray.take([1, 2, 3], n)).toEqual(expected)
   })
 })
+
+describe('takeWhile()', () => {
+  it('returns array taked while callback is satisfied', () => {
+    expect(Arubyray.takeWhile([1, 2, 3, 1, 2, 3], (x) => x < 3)).toEqual([1, 2])
+  })
+})
