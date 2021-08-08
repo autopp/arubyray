@@ -158,3 +158,11 @@ export function repeatedPermutation<T>(array: readonly T[], n: number): T[][] {
 
   return result
 }
+
+export function take<T>(array: readonly T[], n: number): T[] {
+  if (n < 0) {
+    throw new Error('attempt to take negative size')
+  }
+
+  return array.slice(0, n)
+}

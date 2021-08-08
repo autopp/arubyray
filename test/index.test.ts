@@ -270,3 +270,19 @@ describe('repeatedPermutation()', () => {
     expect(actual.length).toEqual(expected.length)
   })
 })
+
+describe('take()', () => {
+  it('with negative value, throws error', () => {
+    expect(() => Arubyray.take([1, 2, 3, 4, 5], -1)).toThrow()
+  })
+
+  it.each([
+    [0, []],
+    [1, [1]],
+    [2, [1, 2]],
+    [3, [1, 2, 3]],
+    [4, [1, 2, 3]],
+  ])('with [1, 2, 3] and %j, returns %j', (n, expected) => {
+    expect(Arubyray.take([1, 2, 3], n)).toEqual(expected)
+  })
+})
