@@ -29,11 +29,12 @@ export function combination<T>(array: readonly T[], n: number): T[][] {
     return [[]]
   }
 
-  const [head, ...rest] = array
-  const appended = combination(rest, n - 1).map((sub) => [head, ...sub])
+  const result: T[][] = []
+  for (let i = 0; i < array.length; i++) {
+    result.push(...combination(array.slice(i + 1), n - 1).map((sub) => [array[i], ...sub]))
+  }
 
-  appended.push(...combination(rest, n))
-  return appended
+  return result
 }
 
 export function count<T>(array: readonly T[], callackfn: (x: T) => boolean): number {
@@ -135,8 +136,7 @@ export function repeatedCombination<T>(array: readonly T[], n: number): T[][] {
 
   const result: T[][] = []
   for (let i = 0; i < array.length; i++) {
-    const head = array[i]
-    result.push(...repeatedCombination(array.slice(i), n - 1).map((sub) => [head, ...sub]))
+    result.push(...repeatedCombination(array.slice(i), n - 1).map((sub) => [array[i], ...sub]))
   }
 
   return result
