@@ -18,6 +18,7 @@ declare global {
     repeatedPermutation(n: number): T[][]
     take(n: number): T[]
     takeWhile(callbackfn: (x: T) => boolean): T[]
+    partition(callbackfn: (x: T) => boolean): [T[], T[]]
   }
 }
 
@@ -75,4 +76,8 @@ Array.prototype.take = function <T>(this: T[], n: number): T[] {
 
 Array.prototype.takeWhile = function <T>(this: T[], callbackfn: (x: T) => boolean): T[] {
   return Arubyray.takeWhile(this, callbackfn)
+}
+
+Array.prototype.partition = function <T>(this: T[], callbackfn: (x: T) => boolean): [T[], T[]] {
+  return Arubyray.partition(this, callbackfn)
 }

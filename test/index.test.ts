@@ -292,3 +292,12 @@ describe('takeWhile()', () => {
     expect(Arubyray.takeWhile([1, 2, 3, 1, 2, 3], (x) => x < 3)).toEqual([1, 2])
   })
 })
+
+describe('partition()', () => {
+  it('returns partitioned tuple by given predicate', () => {
+    expect(Arubyray.partition([0, 1, 2, 3, 4, 5, 6], (x) => x % 3 === 0)).toEqual([
+      [0, 3, 6],
+      [1, 2, 4, 5],
+    ])
+  })
+})

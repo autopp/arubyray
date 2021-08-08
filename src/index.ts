@@ -177,3 +177,14 @@ export function takeWhile<T>(array: readonly T[], callbackfn: (x: T) => boolean)
 
   return array.slice(0, i)
 }
+
+export function partition<T>(array: readonly T[], callbackfn: (x: T) => boolean): [T[], T[]] {
+  const satisfied: T[] = []
+  const notSatisfied: T[] = []
+
+  for (const x of array) {
+    ;(callbackfn(x) ? satisfied : notSatisfied).push(x)
+  }
+
+  return [satisfied, notSatisfied]
+}
