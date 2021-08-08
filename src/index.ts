@@ -1,3 +1,5 @@
+import { TupleToTupleOfArray } from './util'
+
 export function clear<T>(array: Array<T>): Array<T> {
   array.length = 0
   return array
@@ -85,14 +87,10 @@ export function permutation<T>(array: readonly T[], n: number): T[][] {
   return result
 }
 
-type TupleToTupleOfArray<T extends readonly unknown[]> = {
-  [I in keyof T]: T[I][]
-}
-
 export function product<T>(array: readonly T[]): T[][]
-export function product<T, U, W extends unknown[]>(
+export function product<T, U, W extends readonly unknown[]>(
   array: readonly T[],
-  other: U[],
+  other: readonly U[],
   ...list: TupleToTupleOfArray<W>
 ): [T, U, ...W][]
 
