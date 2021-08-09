@@ -9,7 +9,8 @@
     "prepare": "npm run build",
     "test": "jest",
     "lint": "eslint .",
-    "clean": "rm -fR dist"
+    "clean": "rm -fR dist doc/input",
+    "doc": "api-extractor run --local --verbose && api-documenter markdown -i doc/input -o doc/api"
   },
   "keywords": [
     "array"
@@ -17,6 +18,8 @@
   "author": "autopp",
   "license": "Apache-2.0",
   "devDependencies": {
+    "@microsoft/api-documenter": "^7.13.34",
+    "@microsoft/api-extractor": "^7.18.4",
     "@types/jest": "^26.0.24",
     "@typescript-eslint/eslint-plugin": "^4.29.0",
     "@typescript-eslint/parser": "^4.29.0",

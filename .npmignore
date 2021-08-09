@@ -1,7 +1,9 @@
 /src
 /test
+/doc
 /node_modules
 /.github
+api-extractor.json
 .eslintignore
 .eslintrc.js
 jest.config.ts
