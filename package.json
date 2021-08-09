@@ -1,13 +1,15 @@
 {
   "name": "arubyray",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "array utilities provided in Ruby",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
+    "prepare": "npm run build",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "clean": "rm -fR dist"
   },
   "keywords": [
     "array"
