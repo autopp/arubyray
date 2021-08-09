@@ -8,3 +8,4 @@ api-extractor.json
 .eslintrc.js
 jest.config.ts
 tsconfig.json
+*.tgz

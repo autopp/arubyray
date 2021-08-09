@@ -6,7 +6,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "prepare": "npm run build",
+    "orepack": "npm run build",
     "test": "jest",
     "lint": "eslint .",
     "clean": "rm -fR dist doc/input",
