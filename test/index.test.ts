@@ -10,21 +10,6 @@ describe('clear()', () => {
   })
 })
 
-describe('assoc()', () => {
-  const array = [
-    [1, 'a'],
-    [2, 'b', 'c'],
-    [3, 'd', 'e', 'f'],
-  ] as [number, ...string[]][]
-
-  it.each([
-    ['when matching tupple is found, returns it', 2, [2, 'b', 'c']],
-    ['when matching tuple is not found, returns undefined', 4, undefined],
-  ])('%s', (_, key, expected) => {
-    expect(Arubyray.assoc(array, key)).toEqual(expected)
-  })
-})
-
 describe('compact()', () => {
   it('returns array excludes null and undefined', () => {
     expect(Arubyray.compact([1, undefined, 2, null])).toEqual([1, 2])

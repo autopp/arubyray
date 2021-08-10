@@ -8,7 +8,6 @@
 
 |  Function | Description |
 |  --- | --- |
-|  [assoc(array, key)](./arubyray.assoc.md) |  |
 |  [clear(array)](./arubyray.clear.md) |  |
 |  [combination(array, n)](./arubyray.combination.md) |  |
 |  [compact(array)](./arubyray.compact.md) |  |
