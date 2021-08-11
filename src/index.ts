@@ -1,6 +1,6 @@
 import { TupleToTupleOfArray } from './util'
 
-export function clear<T>(array: Array<T>): Array<T> {
+export function clear<T>(array: Array<T>): T[] {
   array.length = 0
   return array
 }
@@ -84,41 +84,27 @@ export function permutation<T>(array: readonly T[], n: number): T[][] {
   return result
 }
 
-export function product<T>(array: readonly T[]): T[][]
-export function product<T, U, W extends readonly unknown[]>(
-  array: readonly T[],
-  other: readonly U[],
-  ...list: TupleToTupleOfArray<W>
-): [T, U, ...W][]
-
-export function product<T, U, W extends readonly unknown[]>(
-  array: readonly T[],
-  other?: readonly U[],
-  ...list: TupleToTupleOfArray<W>
-): T[][] | [T, U, ...W][] {
-  const doProduct = <T, U, W extends readonly unknown[]>(
-    array: readonly T[],
-    other: readonly U[] | undefined,
-    list: TupleToTupleOfArray<W>
-  ): T[][] | [T, U, ...W][] => {
-    if (other === undefined) {
-      return array.map((x) => [x])
-    }
-
-    const [head, ...rest] = list
-    const sub = doProduct(other, head, rest) as unknown as [U, ...W][]
-
-    const result: [T, U, ...W][] = []
-    array.forEach((x) => {
-      sub.forEach((y) => {
-        result.push([x, ...y])
-      })
-    })
-
-    return result
+export function product<T extends unknown[]>(...list: TupleToTupleOfArray<T>): T[] {
+  if (list.length === 0) {
+    return []
   }
 
-  return doProduct(array, other, list)
+  const [head, ...rest] = list
+
+  if (rest.length === 0) {
+    return head.map((x) => [x] as T)
+  }
+
+  const sub = product(...rest)
+
+  const result: T[] = []
+  head.forEach((x) => {
+    sub.forEach((y) => {
+      result.push([x, ...y] as T)
+    })
+  })
+
+  return result
 }
 
 export function repeatedCombination<T>(array: readonly T[], n: number): T[][] {

@@ -16,8 +16,7 @@
 |  [dropWhile(array, callbackfn)](./arubyray.dropwhile.md) |  |
 |  [partition(array, callbackfn)](./arubyray.partition.md) |  |
 |  [permutation(array, n)](./arubyray.permutation.md) |  |
-|  [product(array)](./arubyray.product.md) |  |
-|  [product(array, other, list)](./arubyray.product_1.md) |  |
+|  [product(list)](./arubyray.product.md) |  |
 |  [repeatedCombination(array, n)](./arubyray.repeatedcombination.md) |  |
 |  [repeatedPermutation(array, n)](./arubyray.repeatedpermutation.md) |  |
 |  [take(array, n)](./arubyray.take.md) |  |

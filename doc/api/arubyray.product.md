@@ -7,16 +7,16 @@
 <b>Signature:</b>
 
 ```typescript
-export declare function product<T>(array: readonly T[]): T[][];
+export declare function product<T extends unknown[]>(...list: TupleToTupleOfArray<T>): T[];
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  array | readonly T\[\] |  |
+|  list | TupleToTupleOfArray&lt;T&gt; |  |
 
 <b>Returns:</b>
 
-T\[\]\[\]
+T\[\]
 

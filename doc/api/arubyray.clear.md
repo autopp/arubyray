@@ -7,7 +7,7 @@
 <b>Signature:</b>
 
 ```typescript
-export declare function clear<T>(array: Array<T>): Array<T>;
+export declare function clear<T>(array: Array<T>): T[];
 ```
 
 ## Parameters
@@ -18,5 +18,5 @@ export declare function clear<T>(array: Array<T>): Array<T>;
 
 <b>Returns:</b>
 
-Array&lt;T&gt;
+T\[\]
 

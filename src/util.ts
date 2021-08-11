@@ -1,3 +1,3 @@
-export type TupleToTupleOfArray<T extends readonly unknown[]> = {
+export type TupleToTupleOfArray<T extends unknown[]> = {
   [I in keyof T]: readonly T[I][]
 }

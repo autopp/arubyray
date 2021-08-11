@@ -10,10 +10,7 @@ declare global {
     drop(n: number): T[]
     dropWhile(callbackfn: (x: T) => boolean): T[]
     permutation(n: number): T[][]
-    product<U, W extends readonly unknown[]>(
-      other?: readonly U[],
-      ...list: TupleToTupleOfArray<W>
-    ): T[][] | [T, U, ...W][]
+    product<U extends unknown[]>(...list: TupleToTupleOfArray<U>): [T, ...U][]
     repeatedCombination(n: number): T[][]
     repeatedPermutation(n: number): T[][]
     take(n: number): T[]
@@ -50,16 +47,8 @@ Array.prototype.permutation = function <T>(this: T[], n: number): T[][] {
   return Arubyray.permutation(this, n)
 }
 
-Array.prototype.product = function <T, U, W extends readonly unknown[]>(
-  this: T[],
-  other?: readonly U[],
-  ...list: TupleToTupleOfArray<W>
-): T[][] | [T, U, ...W][] {
-  if (other === undefined) {
-    return Arubyray.product(this)
-  }
-
-  return Arubyray.product<T, U, W>(this, other, ...list)
+Array.prototype.product = function <T, U extends unknown[]>(this: T[], ...list: TupleToTupleOfArray<U>): [T, ...U][] {
+  return Arubyray.product<[T, ...U]>(this, ...list)
 }
 
 Array.prototype.repeatedCombination = function <T>(this: T[], n: number): T[][] {
