@@ -4,19 +4,25 @@
 
 ## product() function
 
+Returns all combinations of elements of arrays in `list`<!-- -->.
+
 <b>Signature:</b>
 
 ```typescript
-export declare function product<T extends unknown[]>(...list: TupleToTupleOfArray<T>): T[];
+export declare function product<T extends unknown[]>(...list: {
+    [I in keyof T]: readonly T[I][];
+}): T[];
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  list | TupleToTupleOfArray&lt;T&gt; |  |
+|  list | { \[I in keyof T\]: readonly T\[I\]\[\]; } | 2D-array for combinations |
 
 <b>Returns:</b>
 
 T\[\]
+
+A new array which contains all combinations of elements of arrays in `list`
 

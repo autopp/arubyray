@@ -4,20 +4,24 @@
 
 ## takeWhile() function
 
+Call `predicate` in order from the begining of `array`<!-- -->, and when it returns `false`<!-- -->, returns a new array which contains the elements up to that point.
+
 <b>Signature:</b>
 
 ```typescript
-export declare function takeWhile<T>(array: readonly T[], callbackfn: (x: T) => boolean): T[];
+export declare function takeWhile<T>(array: readonly T[], predicate: (x: T) => boolean): T[];
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  array | readonly T\[\] |  |
-|  callbackfn | (x: T) =&gt; boolean |  |
+|  array | readonly T\[\] | The target array |
+|  predicate | (x: T) =&gt; boolean | A function which will be called with each element in <code>array</code> |
 
 <b>Returns:</b>
 
 T\[\]
+
+A new array
 

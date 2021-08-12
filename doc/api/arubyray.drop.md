@@ -4,6 +4,8 @@
 
 ## drop() function
 
+Returns a new array with same elemenets of `array` except first `n` elements.
+
 <b>Signature:</b>
 
 ```typescript
@@ -14,10 +16,12 @@ export declare function drop<T>(array: readonly T[], n: number): T[];
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  array | readonly T\[\] |  |
-|  n | number |  |
+|  array | readonly T\[\] | The target array |
+|  n | number | non-negative integer |
 
 <b>Returns:</b>
 
 T\[\]
+
+A new array
 

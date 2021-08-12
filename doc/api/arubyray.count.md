@@ -4,20 +4,24 @@
 
 ## count() function
 
+Counts number of elements of `array` which satisfies `predicate`<!-- -->.
+
 <b>Signature:</b>
 
 ```typescript
-export declare function count<T>(array: readonly T[], callackfn: (x: T) => boolean): number;
+export declare function count<T>(array: readonly T[], predicate: (x: T) => boolean): number;
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  array | readonly T\[\] |  |
-|  callackfn | (x: T) =&gt; boolean |  |
+|  array | readonly T\[\] | The target array |
+|  predicate | (x: T) =&gt; boolean | A function which will be called with each element in <code>array</code> |
 
 <b>Returns:</b>
 
 number
+
+Number of elements of `array` which satisfies `predicate`
 

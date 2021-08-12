@@ -8,17 +8,17 @@
 
 |  Function | Description |
 |  --- | --- |
-|  [clear(array)](./arubyray.clear.md) |  |
-|  [combination(array, n)](./arubyray.combination.md) |  |
-|  [compact(array)](./arubyray.compact.md) |  |
-|  [count(array, callackfn)](./arubyray.count.md) |  |
-|  [drop(array, n)](./arubyray.drop.md) |  |
-|  [dropWhile(array, callbackfn)](./arubyray.dropwhile.md) |  |
-|  [partition(array, callbackfn)](./arubyray.partition.md) |  |
-|  [permutation(array, n)](./arubyray.permutation.md) |  |
-|  [product(list)](./arubyray.product.md) |  |
-|  [repeatedCombination(array, n)](./arubyray.repeatedcombination.md) |  |
-|  [repeatedPermutation(array, n)](./arubyray.repeatedpermutation.md) |  |
-|  [take(array, n)](./arubyray.take.md) |  |
-|  [takeWhile(array, callbackfn)](./arubyray.takewhile.md) |  |
+|  [clear(array)](./arubyray.clear.md) | Deletes all elements from <code>array</code>. |
+|  [combination(array, n)](./arubyray.combination.md) | Returns a new array which contains <code>n</code>-combinations of elemenets of <code>array</code>. |
+|  [compact(array)](./arubyray.compact.md) | Returns a new array with same elemenets of <code>array</code> except <code>null</code> or <code>undefined</code>. |
+|  [count(array, predicate)](./arubyray.count.md) | Counts number of elements of <code>array</code> which satisfies <code>predicate</code>. |
+|  [drop(array, n)](./arubyray.drop.md) | Returns a new array with same elemenets of <code>array</code> except first <code>n</code> elements. |
+|  [dropWhile(array, predicate)](./arubyray.dropwhile.md) | Call <code>predicate</code> in order from the begining of <code>array</code>, and when it returns <code>false</code>, returns a new array which contains the remaining. |
+|  [partition(array, callbackfn)](./arubyray.partition.md) | Returns 2-tuple of array. The first contains the elements of <code>array</code> which returned <code>true</code> by <code>predicate</code>. The second contains the remainings. |
+|  [permutation(array, n)](./arubyray.permutation.md) | Returns a new array which contains <code>n</code>-permutations of elemenets of <code>array</code>. |
+|  [product(list)](./arubyray.product.md) | Returns all combinations of elements of arrays in <code>list</code>. |
+|  [repeatedCombination(array, n)](./arubyray.repeatedcombination.md) | Returns a new array which contains <code>n</code>-combinations with repeatation of elemenets of <code>array</code>. |
+|  [repeatedPermutation(array, n)](./arubyray.repeatedpermutation.md) | Returns a new array which contains <code>n</code>-permutations with repeatation of elemenets of <code>array</code>. |
+|  [take(array, n)](./arubyray.take.md) | Returns a new array with first <code>n</code> elemenets of <code>array</code> |
+|  [takeWhile(array, predicate)](./arubyray.takewhile.md) | Call <code>predicate</code> in order from the begining of <code>array</code>, and when it returns <code>false</code>, returns a new array which contains the elements up to that point. |
 

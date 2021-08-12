@@ -4,6 +4,8 @@
 
 ## combination() function
 
+Returns a new array which contains `n`<!-- -->-combinations of elemenets of `array`<!-- -->.
+
 <b>Signature:</b>
 
 ```typescript
@@ -14,10 +16,12 @@ export declare function combination<T>(array: readonly T[], n: number): T[][];
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  array | readonly T\[\] |  |
-|  n | number |  |
+|  array | readonly T\[\] | The target array |
+|  n | number | Size of combination |
 
 <b>Returns:</b>
 
 T\[\]\[\]
+
+A new array with combinations
 

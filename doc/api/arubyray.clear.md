@@ -4,6 +4,8 @@
 
 ## clear() function
 
+Deletes all elements from `array`<!-- -->.
+
 <b>Signature:</b>
 
 ```typescript
@@ -14,9 +16,11 @@ export declare function clear<T>(array: Array<T>): T[];
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  array | Array&lt;T&gt; |  |
+|  array | Array&lt;T&gt; | The target array |
 
 <b>Returns:</b>
 
 T\[\]
+
+`array`
 

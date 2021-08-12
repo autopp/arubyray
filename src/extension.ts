@@ -1,5 +1,4 @@
 import * as Arubyray from '.'
-import { TupleToTupleOfArray } from './util'
 
 declare global {
   interface Array<T> {
@@ -10,7 +9,7 @@ declare global {
     drop(n: number): T[]
     dropWhile(callbackfn: (x: T) => boolean): T[]
     permutation(n: number): T[][]
-    product<U extends unknown[]>(...list: TupleToTupleOfArray<U>): [T, ...U][]
+    product<U extends unknown[]>(...list: { [I in keyof U]: readonly U[I][] }): [T, ...U][]
     repeatedCombination(n: number): T[][]
     repeatedPermutation(n: number): T[][]
     take(n: number): T[]
@@ -47,9 +46,12 @@ Array.prototype.permutation = function <T>(this: T[], n: number): T[][] {
   return Arubyray.permutation(this, n)
 }
 
-Array.prototype.product = function <T, U extends unknown[]>(this: T[], ...list: TupleToTupleOfArray<U>): [T, ...U][] {
+Array.prototype.product = function <T, U extends unknown[]>(
+  this: T[],
+  ...list: { [I in keyof U]: readonly U[I][] }
+): [T, ...U][] {
   return Arubyray.product<[T, ...U]>(this, ...list)
-}
+} as typeof Array.prototype.product // FIXME
 
 Array.prototype.repeatedCombination = function <T>(this: T[], n: number): T[][] {
   return Arubyray.repeatedCombination(this, n)

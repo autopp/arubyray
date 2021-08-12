@@ -4,6 +4,8 @@
 
 ## compact() function
 
+Returns a new array with same elemenets of `array` except `null` or `undefined`<!-- -->.
+
 <b>Signature:</b>
 
 ```typescript
@@ -14,9 +16,11 @@ export declare function compact<T>(array: readonly T[]): T[];
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  array | readonly T\[\] |  |
+|  array | readonly T\[\] | The target array |
 
 <b>Returns:</b>
 
 T\[\]
+
+A new array
 

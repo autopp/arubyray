@@ -17,10 +17,12 @@ module.exports = {
     "sourceType": "module"
   },
   "plugins": [
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "eslint-plugin-tsdoc",
   ],
   ignorePatterns: [".eslintrc.js"],
   "rules": {
+    "tsdoc/syntax": "warn",
     "semi": ["error", "never"],
     "prettier/prettier": ["error", { semi: false, printWidth: 120, singleQuote: true }],
   },

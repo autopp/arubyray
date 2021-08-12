@@ -4,6 +4,8 @@
 
 ## take() function
 
+Returns a new array with first `n` elemenets of `array`
+
 <b>Signature:</b>
 
 ```typescript
@@ -14,10 +16,12 @@ export declare function take<T>(array: readonly T[], n: number): T[];
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  array | readonly T\[\] |  |
-|  n | number |  |
+|  array | readonly T\[\] | The target array |
+|  n | number | non-negative integer |
 
 <b>Returns:</b>
 
 T\[\]
+
+A new array
 

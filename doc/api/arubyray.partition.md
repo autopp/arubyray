@@ -4,6 +4,8 @@
 
 ## partition() function
 
+Returns 2-tuple of array. The first contains the elements of `array` which returned `true` by `predicate`<!-- -->. The second contains the remainings.
+
 <b>Signature:</b>
 
 ```typescript
@@ -14,10 +16,12 @@ export declare function partition<T>(array: readonly T[], callbackfn: (x: T) => 
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  array | readonly T\[\] |  |
+|  array | readonly T\[\] | The target array |
 |  callbackfn | (x: T) =&gt; boolean |  |
 
 <b>Returns:</b>
 
 \[T\[\], T\[\]\]
+
+2-tuple
 
