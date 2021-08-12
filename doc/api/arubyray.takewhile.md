@@ -25,3 +25,11 @@ T\[\]
 
 A new array
 
+## Example
+
+
+```typescript
+Arubyray.takeWhile([1, 2, 3, 1, 2, 3], (x) => x < 3) // => [1, 2]
+
+```
+

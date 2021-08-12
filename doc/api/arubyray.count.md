@@ -25,3 +25,11 @@ number
 
 Number of elements of `array` which satisfies `predicate`
 
+## Example
+
+
+```typescript
+Arubyray.count([1, 2, 3, 4, 5], (x) => x % 2 === 0) // => 2
+
+```
+

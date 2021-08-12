@@ -9,7 +9,7 @@ Returns 2-tuple of array. The first contains the elements of `array` which retur
 <b>Signature:</b>
 
 ```typescript
-export declare function partition<T>(array: readonly T[], callbackfn: (x: T) => boolean): [T[], T[]];
+export declare function partition<T>(array: readonly T[], predicate: (x: T) => boolean): [T[], T[]];
 ```
 
 ## Parameters
@@ -17,11 +17,19 @@ export declare function partition<T>(array: readonly T[], callbackfn: (x: T) => 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
 |  array | readonly T\[\] | The target array |
-|  callbackfn | (x: T) =&gt; boolean |  |
+|  predicate | (x: T) =&gt; boolean | A function which will be called with each element in <code>array</code> |
 
 <b>Returns:</b>
 
 \[T\[\], T\[\]\]
 
 2-tuple
+
+## Example
+
+
+```typescript
+Arubyray.partition([1, 2, 3, 4, 5], (x) => x % 2 === 0) // => [[2, 4], [1, 3, 5]]
+
+```
 

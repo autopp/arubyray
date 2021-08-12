@@ -25,3 +25,11 @@ T\[\]\[\]
 
 A new array with permutations with repeatation
 
+## Example
+
+
+```typescript
+Arubyray.repeatedPermutation([1, 2]) // => [[1, 1], [1, 2], [2, 1], [2, 2]]
+
+```
+

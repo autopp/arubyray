@@ -26,3 +26,11 @@ T\[\]
 
 A new array which contains all combinations of elements of arrays in `list`
 
+## Example
+
+
+```typescript
+Arubyray.product([1, 2, 3], ['a', 'b']) // => [[1, 'a'], [1, 'b'], [2, 'a'], [2, 'b'], [3, 'a'], [3, 'b']]
+
+```
+

@@ -2,6 +2,12 @@
  * Deletes all elements from `array`.
  * @param array - The target array
  * @returns `array`
+ * @example
+ * ```typescript
+ * const array = [1, 2, 3]
+ * Arubyray.clear(array)
+ * array.length // => 0
+ * ```
  * @public
  */
 export function clear<T>(array: Array<T>): T[] {
@@ -13,6 +19,10 @@ export function clear<T>(array: Array<T>): T[] {
  * Returns a new array with same elemenets of `array` except `null` or `undefined`.
  * @param array - The target array
  * @returns A new array
+ * @example
+ * ```typescript
+ * Arubyray.compact([1, null, 2, undefined, 3]) // => [1, 2, 3]
+ * ```
  * @public
  */
 export function compact<T>(array: readonly T[]): T[] {
@@ -31,6 +41,10 @@ export function compact<T>(array: readonly T[]): T[] {
  * @param array - The target array
  * @param n - Size of combination
  * @returns A new array with combinations
+ * @example
+ * ```typescript
+ * Arubyray.combination([1, 2, 3, 4], 2) // => [[1, 2], [1, 3], [1, 4], [2, 3], [2, 4], [3, 4]]
+ * ```
  * @public
  */
 export function combination<T>(array: readonly T[], n: number): T[][] {
@@ -55,6 +69,10 @@ export function combination<T>(array: readonly T[], n: number): T[][] {
  * @param array - The target array
  * @param predicate - A function which will be called with each element in `array`
  * @returns Number of elements of `array` which satisfies `predicate`
+ * @example
+ * ```typescript
+ * Arubyray.count([1, 2, 3, 4, 5], (x) => x % 2 === 0) // => 2
+ * ```
  * @public
  */
 export function count<T>(array: readonly T[], predicate: (x: T) => boolean): number {
@@ -74,6 +92,10 @@ export function count<T>(array: readonly T[], predicate: (x: T) => boolean): num
  * @param array - The target array
  * @param n - non-negative integer
  * @returns A new array
+ * @example
+ * ```typescript
+ * Arubyray.drop([1, 2, 3, 4, 5], 2) // => [3, 4, 5]
+ * ```
  * @public
  */
 export function drop<T>(array: readonly T[], n: number): T[] {
@@ -85,6 +107,10 @@ export function drop<T>(array: readonly T[], n: number): T[] {
  * @param array - The target array
  * @param predicate - A function which will be called with each element in `array`
  * @returns A new array
+ * @example
+ * ```typescript
+ * Arubyray.dropWhile([1, 2, 3, 1, 2, 3], (x) => x < 3) // => [3, 1, 2, 3]
+ * ```
  * @public
  */
 export function dropWhile<T>(array: readonly T[], predicate: (x: T) => boolean): T[] {
@@ -103,6 +129,10 @@ export function dropWhile<T>(array: readonly T[], predicate: (x: T) => boolean):
  * @param array - The target array
  * @param n - Size of permutation
  * @returns A new array with permutations
+ * @example
+ * ```typescript
+ * Arubyray.permutation([1, 2, 3], 2) // => [[1, 2], [1, 3], [2, 1], [2, 3], [3, 1], [3, 2]]
+ * ```
  * @public
  */
 export function permutation<T>(array: readonly T[], n: number): T[][] {
@@ -134,6 +164,10 @@ export function permutation<T>(array: readonly T[], n: number): T[][] {
  * Returns all combinations of elements of arrays in `list`.
  * @param list - 2D-array for combinations
  * @returns A new array which contains all combinations of elements of arrays in `list`
+ * @example
+ * ```typescript
+ * Arubyray.product([1, 2, 3], ['a', 'b']) // => [[1, 'a'], [1, 'b'], [2, 'a'], [2, 'b'], [3, 'a'], [3, 'b']]
+ * ```
  * @public
  */
 export function product<T extends unknown[]>(...list: { [I in keyof T]: readonly T[I][] }): T[] {
@@ -164,6 +198,10 @@ export function product<T extends unknown[]>(...list: { [I in keyof T]: readonly
  * @param array - The target array
  * @param n - Size of combination
  * @returns A new array with combinations with repeatation
+ * @example
+ * ```typescript
+ * Arubyray.repeatedCombination([1, 2, 3], 2) // => [[1, 1], [1, 2], [1, 3], [2, 2], [2, 3], [3, 3]]
+ * ```
  * @public
  */
 export function repeatedCombination<T>(array: readonly T[], n: number): T[][] {
@@ -188,6 +226,10 @@ export function repeatedCombination<T>(array: readonly T[], n: number): T[][] {
  * @param array - The target array
  * @param n - Size of permutation
  * @returns A new array with permutations with repeatation
+ * @example
+ * ```typescript
+ * Arubyray.repeatedPermutation([1, 2]) // => [[1, 1], [1, 2], [2, 1], [2, 2]]
+ * ```
  * @public
  */
 export function repeatedPermutation<T>(array: readonly T[], n: number): T[][] {
@@ -212,6 +254,10 @@ export function repeatedPermutation<T>(array: readonly T[], n: number): T[][] {
  * @param array - The target array
  * @param n - non-negative integer
  * @returns A new array
+ * @example
+ * ```typescript
+ * Arubyray.take([1, 2, 3, 4, 5], 3) // => [1, 2, 3]
+ * ```
  * @public
  */
 export function take<T>(array: readonly T[], n: number): T[] {
@@ -227,6 +273,10 @@ export function take<T>(array: readonly T[], n: number): T[] {
  * @param array - The target array
  * @param predicate - A function which will be called with each element in `array`
  * @returns A new array
+ * @example
+ * ```typescript
+ * Arubyray.takeWhile([1, 2, 3, 1, 2, 3], (x) => x < 3) // => [1, 2]
+ * ```
  * @public
  */
 export function takeWhile<T>(array: readonly T[], predicate: (x: T) => boolean): T[] {
@@ -243,15 +293,20 @@ export function takeWhile<T>(array: readonly T[], predicate: (x: T) => boolean):
 /**
  * Returns 2-tuple of array. The first contains the elements of `array` which returned `true` by `predicate`. The second contains the remainings.
  * @param array - The target array
+ * @param predicate - A function which will be called with each element in `array`
  * @returns 2-tuple
+ * @example
+ * ```typescript
+ * Arubyray.partition([1, 2, 3, 4, 5], (x) => x % 2 === 0) // => [[2, 4], [1, 3, 5]]
+ * ```
  * @public
  */
-export function partition<T>(array: readonly T[], callbackfn: (x: T) => boolean): [T[], T[]] {
+export function partition<T>(array: readonly T[], predicate: (x: T) => boolean): [T[], T[]] {
   const satisfied: T[] = []
   const notSatisfied: T[] = []
 
   for (const x of array) {
-    ;(callbackfn(x) ? satisfied : notSatisfied).push(x)
+    ;(predicate(x) ? satisfied : notSatisfied).push(x)
   }
 
   return [satisfied, notSatisfied]

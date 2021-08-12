@@ -24,3 +24,13 @@ T\[\]
 
 `array`
 
+## Example
+
+
+```typescript
+const array = [1, 2, 3]
+Arubyray.clear(array)
+array.length // => 0
+
+```
+
