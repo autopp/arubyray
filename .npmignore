@@ -3,6 +3,7 @@
 /doc
 /node_modules
 /.github
+/.husky
 api-extractor.json
 .eslintignore
 .eslintrc.js
