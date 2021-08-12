@@ -8,6 +8,7 @@ declare global {
     count(callbackfn: (x: T) => boolean): number
     drop(n: number): T[]
     dropWhile(callbackfn: (x: T) => boolean): T[]
+    forEachWith<U>(obj: U, callbackfn: (x: T, obj: U) => void): U
     permutation(n: number): T[][]
     product<U extends unknown[]>(...list: { [I in keyof U]: readonly U[I][] }): [T, ...U][]
     repeatedCombination(n: number): T[][]
@@ -40,6 +41,10 @@ Array.prototype.drop = function <T>(this: T[], n: number): T[] {
 
 Array.prototype.dropWhile = function <T>(this: T[], callbackfn: (x: T) => boolean): T[] {
   return Arubyray.dropWhile(this, callbackfn)
+}
+
+Array.prototype.forEachWith = function <T, U>(this: T[], obj: U, callbackfn: (x: T, obj: U) => void): U {
+  return Arubyray.forEachWith(this, obj, callbackfn)
 }
 
 Array.prototype.permutation = function <T>(this: T[], n: number): T[][] {

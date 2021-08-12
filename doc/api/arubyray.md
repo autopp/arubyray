@@ -14,6 +14,7 @@
 |  [count(array, predicate)](./arubyray.count.md) | Counts number of elements of <code>array</code> which satisfies <code>predicate</code>. |
 |  [drop(array, n)](./arubyray.drop.md) | Returns a new array with same elemenets of <code>array</code> except first <code>n</code> elements. |
 |  [dropWhile(array, predicate)](./arubyray.dropwhile.md) | Call <code>predicate</code> in order from the begining of <code>array</code>, and when it returns <code>false</code>, returns a new array which contains the remaining. |
+|  [forEachWith(array, obj, callbackfn)](./arubyray.foreachwith.md) | Like <code>Array.prototype.forEach</code>, but <code>callbackfn</code> called with both the element of <code>array</code> and <code>obj</code> and returns <code>obj</code>. |
 |  [partition(array, predicate)](./arubyray.partition.md) | Returns 2-tuple of array. The first contains the elements of <code>array</code> which returned <code>true</code> by <code>predicate</code>. The second contains the remainings. |
 |  [permutation(array, n)](./arubyray.permutation.md) | Returns a new array which contains <code>n</code>-permutations of elemenets of <code>array</code>. |
 |  [product(list)](./arubyray.product.md) | Returns all combinations of elements of arrays in <code>list</code>. |

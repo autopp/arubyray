@@ -56,6 +56,12 @@ describe('dropWhile()', () => {
   })
 })
 
+describe('dropWhile()', () => {
+  it('returns array dropped while callback is satisfied', () => {
+    expect(Arubyray.forEachWith([1, 2, 3], { sum: 0 }, (x, r) => (r.sum += x))).toEqual({ sum: 6 })
+  })
+})
+
 describe('permutation()', () => {
   const array = [1, 2, 3]
   it.each([

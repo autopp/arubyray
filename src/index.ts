@@ -125,6 +125,24 @@ export function dropWhile<T>(array: readonly T[], predicate: (x: T) => boolean):
 }
 
 /**
+ * Like `Array.prototype.forEach`, but `callbackfn` called with both the element of `array` and `obj` and returns `obj`.
+ * @param array - The target array
+ * @param obj - An arbitrary object
+ * @param callbackfn - A function which will be called with each element in `array` and `obj`
+ * @returns `obj`
+ * @example
+ * ```typescript
+ * Arubyray.forEachWith([1, 2, 3], { sum: 0 }, (x, r) => (r.sum += x)) // => { sum: 6 }
+ * ```
+ */
+export function forEachWith<T, U>(array: readonly T[], obj: U, callbackfn: (x: T, obj: U) => void): U {
+  array.forEach((x) => {
+    callbackfn(x, obj)
+  })
+  return obj
+}
+
+/**
  * Returns a new array which contains `n`-permutations of elemenets of `array`.
  * @param array - The target array
  * @param n - Size of permutation
