@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v1.1.0
+
+- Add `filterMap`
+- Remove file for development from package
+
 ## v1.0.0
 
 - Initial release
