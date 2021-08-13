@@ -62,6 +62,12 @@ describe('dropWhile()', () => {
   })
 })
 
+describe('filterMap', () => {
+  it('returns mapped array without null and undefined', () => {
+    expect(Arubyray.filterMap([{ v: 1 }, { v: null }, { v: undefined }, { v: 2 }], (x) => x.v)).toEqual([1, 2])
+  })
+})
+
 describe('permutation()', () => {
   const array = [1, 2, 3]
   it.each([

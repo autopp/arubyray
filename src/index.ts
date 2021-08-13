@@ -125,6 +125,28 @@ export function dropWhile<T>(array: readonly T[], predicate: (x: T) => boolean):
 }
 
 /**
+ * Like `Array.prototype.map`, but `null` and `undefined` are omitted from the result.
+ * @param array - The target array
+ * @param callbackfn - Same as callback of `Array.prototype.map`
+ * @returns Same as `Array.prototype.map`, except `null` and `undefined` are omitted
+ * @example
+ * ```typescript
+ * Arubyray.filterMap([{ v: 1 }, { v: null }, { v: undefined }, { v: 2 }], (x) => x.v) // => [1, 2]
+ * ```
+ */
+export function filterMap<T, U>(array: T[], callbackfn: (x: T, index: number, array: T[]) => U): U[] {
+  const result: U[] = []
+  array.forEach((x, i) => {
+    const r = callbackfn(x, i, array)
+    if (r !== null && r !== undefined) {
+      result.push(r)
+    }
+  })
+
+  return result
+}
+
+/**
  * Like `Array.prototype.forEach`, but `callbackfn` called with both the element of `array` and `obj` and returns `obj`.
  * @param array - The target array
  * @param obj - An arbitrary object
