@@ -6,6 +6,7 @@ declare global {
     compact(): T[]
     combination(n: number): T[][]
     count(callbackfn: (x: T) => boolean): number
+    deference(array: readonly T[], other: readonly T[]): T[]
     drop(n: number): T[]
     dropWhile(callbackfn: (x: T) => boolean): T[]
     filterMap<U>(callbackfn: (x: T, index: number, array: T[]) => U): U[]
@@ -34,6 +35,10 @@ Array.prototype.combination = function <T>(this: T[], n: number): T[][] {
 
 Array.prototype.count = function <T>(this: T[], callbackfn: (x: T) => boolean): number {
   return Arubyray.count(this, callbackfn)
+}
+
+Array.prototype.deference = function <T>(this: T[], other: T[]): T[] {
+  return Arubyray.deference(this, other)
 }
 
 Array.prototype.drop = function <T>(this: T[], n: number): T[] {

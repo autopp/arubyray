@@ -88,6 +88,16 @@ export function count<T>(array: readonly T[], predicate: (x: T) => boolean): num
 }
 
 /**
+ * Returns a new array with elements which is contained in 'array' and is not contained in `other`.
+ * @param array - The target array
+ * @param other - Filtering targets
+ * @returns A new array
+ */
+export function deference<T>(array: readonly T[], other: readonly T[]): T[] {
+  return array.filter((x) => !other.includes(x))
+}
+
+/**
  * Returns a new array with same elemenets of `array` except first `n` elements.
  * @param array - The target array
  * @param n - non-negative integer
