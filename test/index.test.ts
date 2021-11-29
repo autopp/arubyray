@@ -44,6 +44,12 @@ describe('count()', () => {
   })
 })
 
+describe('deference()', () => {
+  it('returns a new filtered array', () => {
+    expect(Arubyray.deference([0, 1, 1, 2, 2, 3], [1, 3])).toEqual([0, 2, 2])
+  })
+})
+
 describe('drop()', () => {
   it('returns array dropped first n items', () => {
     expect(Arubyray.drop([1, 2, 3, 4, 5], 3)).toEqual([4, 5])
