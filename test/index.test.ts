@@ -46,7 +46,7 @@ describe('count()', () => {
 
 describe('deference()', () => {
   it('returns a new filtered array', () => {
-    expect(Arubyray.deference([0, 1, 1, 2, 2, 3], [1, 3])).toEqual([0, 2, 2])
+    expect(Arubyray.deference([0, 1, 1, 2, 2, 3, 4], [1, 3], [3, 4])).toEqual([0, 2, 2])
   })
 })
 
