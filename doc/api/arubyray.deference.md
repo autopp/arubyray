@@ -9,7 +9,7 @@ Returns a new array with elements which is contained in 'array' and is not conta
 <b>Signature:</b>
 
 ```typescript
-export declare function deference<T>(array: readonly T[], other: readonly T[]): T[];
+export declare function deference<T>(array: readonly T[], ...others: readonly T[][]): T[];
 ```
 
 ## Parameters
@@ -17,11 +17,19 @@ export declare function deference<T>(array: readonly T[], other: readonly T[]): 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
 |  array | readonly T\[\] | The target array |
-|  other | readonly T\[\] | Filtering targets |
+|  others | readonly T\[\]\[\] |  |
 
 <b>Returns:</b>
 
 T\[\]
 
 A new array
+
+## Example
+
+
+```typescript
+Arubyray.deference([0, 1, 1, 2, 2, 3, 4], [1, 3], [3, 4]) // => [0, 2, 2]
+
+```
 
