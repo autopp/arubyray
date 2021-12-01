@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.2.0
+
+- Add `deference`
+
 ## v1.1.1
 
 - Change module system from es2020 to commonjs
