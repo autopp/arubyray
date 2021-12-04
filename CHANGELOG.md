@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.2.1
+
+- Rename `deference` to `difference`
+
 ## v1.2.0
 
 - Add `deference`
