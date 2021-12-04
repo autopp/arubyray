@@ -94,10 +94,10 @@ export function count<T>(array: readonly T[], predicate: (x: T) => boolean): num
  * @returns A new array
  * @example
  * ```typescript
- * Arubyray.deference([0, 1, 1, 2, 2, 3, 4], [1, 3], [3, 4]) // => [0, 2, 2]
+ * Arubyray.difference([0, 1, 1, 2, 2, 3, 4], [1, 3], [3, 4]) // => [0, 2, 2]
  * ```
  */
-export function deference<T>(array: readonly T[], ...others: readonly T[][]): T[] {
+export function difference<T>(array: readonly T[], ...others: readonly T[][]): T[] {
   return array.filter((x) => others.every((other) => !other.includes(x)))
 }
 

@@ -12,7 +12,7 @@
 |  [combination(array, n)](./arubyray.combination.md) | Returns a new array which contains <code>n</code>-combinations of elemenets of <code>array</code>. |
 |  [compact(array)](./arubyray.compact.md) | Returns a new array with same elemenets of <code>array</code> except <code>null</code> or <code>undefined</code>. |
 |  [count(array, predicate)](./arubyray.count.md) | Counts number of elements of <code>array</code> which satisfies <code>predicate</code>. |
-|  [deference(array, others)](./arubyray.deference.md) | Returns a new array with elements which is contained in 'array' and is not contained in <code>other</code>. |
+|  [difference(array, others)](./arubyray.difference.md) | Returns a new array with elements which is contained in 'array' and is not contained in <code>other</code>. |
 |  [drop(array, n)](./arubyray.drop.md) | Returns a new array with same elemenets of <code>array</code> except first <code>n</code> elements. |
 |  [dropWhile(array, predicate)](./arubyray.dropwhile.md) | Call <code>predicate</code> in order from the begining of <code>array</code>, and when it returns <code>false</code>, returns a new array which contains the remaining. |
 |  [filterMap(array, callbackfn)](./arubyray.filtermap.md) | Like <code>Array.prototype.map</code>, but <code>null</code> and <code>undefined</code> are omitted from the result. |
